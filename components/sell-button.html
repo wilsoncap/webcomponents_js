@@ -20,24 +20,25 @@
             }
             
             </style>
-            <div class="btn-container"> 
-                <button class="btn"> Compra Ahora </button>
-            </div>
+
+                <div class="btn-container"> 
+                    <button class="btn"> Compra Ahora </button>
+                </div>
     </template>
  <script>
-    class bottom extends HTMLElement{
+    class sellButton extends HTMLElement{
             constructor(){
                 super();
                 this.importDocument = document.currentScript.ownerDocument;
             }
             connectedCallback(){
                 let shadowRoot = this.attachShadow({mode:'open'});
-                const t  = this.importDocument.querySelector("sellBtn")
+                const t  = this.importDocument.querySelector("#sellBtn")
                 const instance = t.content.cloneNode(true)
                 shadowRoot.appendChild(instance)
             }
         }
-        window.customElements.define("sell-bottom", bottom)
+        window.customElements.define("sell-button", sellButton)
  </script>
         
 
